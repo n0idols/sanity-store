@@ -14,7 +14,6 @@ export async function getProducts(): Promise<Product[]> {
         price,
         gallery,
         "mainImage": mainImage.asset->url,
-
     }`
   );
 }
@@ -53,6 +52,7 @@ export async function getCategories(): Promise<Category[]> {
         }`
   );
 }
+
 export async function getCategory(slug: string): Promise<Category> {
   return createClient(clientConfig).fetch(
     groq`*[_type == "category" && slug.current == $slug][0]{

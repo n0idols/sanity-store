@@ -1,33 +1,15 @@
-import { getProducts, getCategories } from "@/sanity/sanity-utils";
-import Image from "next/image";
+import Hero from "@/components/ui/layout/Hero";
+import CategoryList from "@/components/ui/category/list";
+import Featured from "@/components/ui/product/Featured";
+import Info from "@/components/ui/layout/Info";
 
-const HomePage = async () => {
-  const products = await getProducts();
-  const categories = await getCategories();
+export default async function page() {
   return (
-    <div>
-      <h1>categories</h1>
-      <pre>{JSON.stringify(categories, null, 2)}</pre>
-      <h1>products</h1>
-      <pre>{JSON.stringify(products, null, 2)}</pre>
-
-      {products.map((product) => (
-        <div key={product._id}>
-          <div>{product.title}</div>
-          <a href={product.slug}>{product.slug}</a>
-          <div className="w-[400px]">
-            <Image
-              src={product.mainImage}
-              width={0}
-              height={0}
-              sizes="100vw"
-              className="w-full h-auto"
-              alt={product.title}
-            />
-          </div>
-        </div>
-      ))}
-    </div>
+    <>
+      <Hero />
+      <CategoryList />
+      <Featured />
+      <Info />
+    </>
   );
-};
-export default HomePage;
+}

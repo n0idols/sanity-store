@@ -2,30 +2,79 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 h1 {
-  @apply text-5xl font-black;
+  @apply lg:text-5xl text-4xl tracking-wide font-semibold;
+}
+
+label {
+  @apply mb-2 block text-xs font-bold text-gray-900 capitalize;
+}
+
+select {
+  @apply mb-2 rounded-md bg-greys-two p-2;
+}
+legend {
+  @apply mb-4 uppercase text-primary font-semibold tracking-widest text-xs;
+}
+
+fieldset {
+  @apply mb-8;
+}
+.container {
+  @apply max-w-6xl h-full mx-auto px-4 sm:px-6 lg:px-8;
+}
+.hero-content {
+  @apply py-24 space-y-12;
+}
+.title {
+  @apply text-6xl font-thin;
+}
+
+.wider {
+  letter-spacing: 0.5rem;
+}
+.wide {
+  letter-spacing: 0.2rem;
+}
+
+.btn {
+  @apply text-white uppercase  text-xs  tracking-widest font-black bg-primary px-8 py-4;
+}
+.btn-black {
+  @apply text-white uppercase  text-xs  tracking-widest font-black bg-black px-8 py-4;
+}
+.btn-outline {
+  @apply text-black uppercase  text-xs  tracking-widest font-black  px-8 py-4 border border-black;
+}
+
+.qty-btn {
+  @apply bg-greys-two p-4 text-gray-600;
+}
+
+.qty-input {
+  @apply w-[3rem] bg-greys-two text-center font-bold text-gray-900 focus:border-blue-500 focus:ring-blue-500;
+}
+
+.form {
+  @apply mb-4 rounded-md border border-gray-300  px-4 py-4 text-xs;
+}
+
+.form-row {
+  @apply flex flex-col md:flex-row w-full  md:space-x-4;
+}
+
+.input-row {
+  @apply flex flex-col md:w-1/2 w-full;
+}
+
+.product-info {
+  @apply flex flex-col justify-center px-6 space-y-6 lg:text-start text-center mt-4;
+}
+
+.badge {
+  @apply bg-red-500 absolute bottom-1 left-2 z-10 rounded-full px-4 py-2;
+}
+
+.subheading {
+  @apply uppercase tracking-wide font-bold text-2xl;
 }
