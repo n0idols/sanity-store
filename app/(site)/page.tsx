@@ -11,8 +11,8 @@ const HomePage = async () => {
       <h1>products</h1>
       <pre>{JSON.stringify(products, null, 2)}</pre>
 
-      {/* {products.map((product) => (
-        <div>
+      {products.map((product) => (
+        <div key={product._id}>
           <div>{product.title}</div>
           <a href={product.slug}>{product.slug}</a>
           <div className="w-[400px]">
@@ -26,7 +26,7 @@ const HomePage = async () => {
             />
           </div>
         </div>
-      ))} */}
+      ))}
     </div>
   );
 };
