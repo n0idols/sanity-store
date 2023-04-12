@@ -10,13 +10,17 @@ export interface Category {
 export interface Product {
   _id: string;
   title: string;
+  shortname?: string;
   slug: string;
   description: PortableTextBlock[];
   features: PortableTextBlock[];
+  desc: PortableTextBlock[];
+  feat: PortableTextBlock[];
   includes: string[];
   price: number;
   gallery: string[];
-  mainImage: string;
+  mainImage?: string;
+  mobileImage?: string;
   category: string;
   categorySlug: string;
 }

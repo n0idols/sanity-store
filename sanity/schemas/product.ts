@@ -20,6 +20,11 @@ export default defineType({
       },
     }),
     defineField({
+      name: "shortname",
+      title: "Shortname",
+      type: "string",
+    }),
+    defineField({
       name: "price",
       title: "price",
       type: "number",
@@ -28,6 +33,14 @@ export default defineType({
     defineField({
       name: "mainImage",
       title: "Main image",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: "mobileImage",
+      title: "Mobile image",
       type: "image",
       options: {
         hotspot: true,
@@ -52,11 +65,23 @@ export default defineType({
       title: "Description",
       type: "blockContent",
     }),
+    defineField({
+      name: "desc",
+      title: "Desc",
+      type: "array",
+      of: [{ type: "block" }],
+    }),
 
     defineField({
       name: "features",
       title: "Features",
       type: "blockContent",
+    }),
+    defineField({
+      name: "feat",
+      title: "feat",
+      type: "array",
+      of: [{ type: "block" }],
     }),
 
     defineField({

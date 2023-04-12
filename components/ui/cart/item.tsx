@@ -21,12 +21,12 @@ export default function CartItem({ item, isCheckout }: Props) {
         <div className="flex items-center w-full space-x-4">
           <div className="w-16 h-16">
             <Image
-              src={item.item.mobileimg || "/placeholdermob.jpg"}
+              src={item.item.mobileImage || "/placeholdermob.jpg"}
               width="0"
               height="0"
               sizes="100vw"
               className="w-full h-auto"
-              alt={item.item.name}
+              alt={item.item.title}
             />
           </div>
           <div className="text-sm font-semibold">

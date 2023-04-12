@@ -1,3 +1,4 @@
+import SingleProduct from "@/components/ui/product/SingleProduct";
 import { getProduct } from "@/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
@@ -10,5 +11,9 @@ export default async function Product({ params }: any) {
   const slug = params.slug;
   const product = await getProduct(slug);
 
-  return <pre>{JSON.stringify(product, null, 2)}</pre>;
+  return (
+    <>
+      <SingleProduct product={product} />
+    </>
+  );
 }
