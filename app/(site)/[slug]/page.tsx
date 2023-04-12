@@ -1,7 +1,5 @@
 import SingleProduct from "@/components/ui/product/SingleProduct";
 import { getProduct } from "@/sanity/sanity-utils";
-import { PortableText } from "@portabletext/react";
-import Image from "next/image";
 
 type Props = {
   params: { product: string };

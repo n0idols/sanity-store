@@ -10,7 +10,7 @@ import { useCart } from "@/components/context/cart";
 import Related from "./Related";
 import CategoryList from "../category/list";
 import Info from "../layout/Info";
-import { BoxItem, Product } from "@/types";
+import { Product } from "@/types";
 import { PortableText } from "@portabletext/react";
 
 const SingleProduct = ({ product }: { product: Product }) => {
@@ -25,7 +25,7 @@ const SingleProduct = ({ product }: { product: Product }) => {
         name: product.title,
         shortname: product.shortname,
         price: product.price,
-        mobileimg: product.mobileImage,
+        mobileImage: product.mobileImage,
       },
       quantity
     );

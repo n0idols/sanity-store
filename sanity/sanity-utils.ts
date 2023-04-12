@@ -23,6 +23,7 @@ export async function getProduct(slug: string): Promise<Product> {
     groq`*[_type == "product" && slug.current == $slug][0]{
         _id,
         title,
+        shortname,
         "slug": slug.current,
         desc,
         feat,
@@ -30,6 +31,7 @@ export async function getProduct(slug: string): Promise<Product> {
         "gallery": gallery[].asset->url,
         includes,
         "mainImage": mainImage.asset->url,
+        "mobileImage": mobileImage.asset->url,
         "category": category->title,
         "categorySlug": category->slug
       }`,
@@ -44,13 +46,18 @@ export async function getCategories(): Promise<Category[]> {
             title,
             "slug": slug.current,
             "products": *[_type == "product" && references(^._id)]{
-                _id,
-                title,
-                desc,
-                feat,
-                "slug": slug.current,
-                "mainImage": mainImage.asset->url,
-                "price": price
+              _id,
+              title,
+              "slug": slug.current,
+              desc,
+              feat,
+              price,
+              "gallery": gallery[].asset->url,
+              includes,
+              "mainImage": mainImage.asset->url,
+              "mobileImage": mobileImage.asset->url,
+              "category": category->title,
+              "categorySlug": category->slug
             }
         }`
   );
