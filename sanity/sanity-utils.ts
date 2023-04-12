@@ -1,7 +1,6 @@
 import { createClient, groq } from "next-sanity";
 import clientConfig from "./config/client-config";
-import { Product } from "@/types/Product";
-import { Category } from "@/types/Category";
+import { Category, Product } from "@/types";
 
 export async function getProducts(): Promise<Product[]> {
   return createClient(clientConfig).fetch(

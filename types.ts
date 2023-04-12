@@ -1,5 +1,12 @@
 import { PortableTextBlock } from "sanity";
 
+export interface Category {
+  _id: string;
+  title: string;
+  slug: string;
+  products: Product[];
+}
+
 export interface Product {
   _id: string;
   title: string;
@@ -13,3 +20,14 @@ export interface Product {
   category: string;
   categorySlug: string;
 }
+
+export interface BoxItem {
+  name: string;
+  qty: number;
+}
+
+export type Params = {
+  params: {
+    id: string;
+  };
+};
