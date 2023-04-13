@@ -189,7 +189,7 @@ const SingleProduct = ({ product }: { product: Product }) => {
         </div>
       ) : null}
 
-      <Related product={product} />
+      <Related relatedProducts={product.relatedProducts} />
       <CategoryList />
       <Info />
     </div>

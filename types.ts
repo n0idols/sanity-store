@@ -23,6 +23,7 @@ export interface Product {
   mobileImage?: string;
   category: string;
   categorySlug: string;
+  relatedProducts: Product[];
 }
 
 export interface BoxItem {
