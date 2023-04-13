@@ -12,7 +12,7 @@ const Hero = () => {
               made for the passionate music enthusiast.
             </p>
             <div>
-              <a href="/headphones/1" className="btn">
+              <a href="/xx99-mark-ii-headphones" className="btn">
                 see product
               </a>
             </div>
